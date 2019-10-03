@@ -22,7 +22,7 @@ if (isset($_GET["action"])) {
 
 				$ext = explode(".", $_GET["file"]);
 				$ext = count($ext) > 1 ? strtolower(end($ext)) : null;
-				exit;
+
 				if (in_array($ext, $allowedExt)) {
 					session_cache_limiter("none");
 
@@ -47,7 +47,6 @@ if (isset($_GET["action"])) {
 			break;
 
 		case "fetch":
-			sleep(10);
 			$limit = 20;
 			$page = (isset($_GET["page"]) && is_numeric($_GET["page"])) ? (int)$_GET["page"] : 1;
 			$start = $limit * ($page - 1);
