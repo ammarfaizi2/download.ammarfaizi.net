@@ -80,11 +80,9 @@ if (isset($_GET["action"])) {
 			if (isset($_GET["type"]) && isset($_GET["file"]) && is_string($_GET["file"])) {
 				$_GET["file"] = basename($_GET["file"]);
 				if ($_GET["type"] === "cr2") {
-
 					$f = explode(".", $_GET["file"]);
 					unset($f[count($f) - 1]);
 					$f = __DIR__."/files/".implode(".", $f).".CR2";
-					var_dump($f);
 					if (file_exists($f)) {
 						goto download_file;
 					}
