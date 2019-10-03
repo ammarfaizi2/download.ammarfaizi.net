@@ -93,8 +93,7 @@ if (isset($_GET["action"])) {
 					unset($f[count($f) - 1]);
 					$f = __DIR__."/files/".implode(".", $f).".CR2";
 					if (file_exists($f)) {
-						header("Location: https://download.ammarfaizi.net/wisata_kaliurang/files/".basename($f));
-						exit;
+						goto download_file;
 					}
 				} else if ($_GET["type"] === "jpg") {
 					$f = __DIR__."/files/".$_GET["file"];
@@ -121,12 +120,4 @@ print json_encode($data, JSON_UNESCAPED_SLASHES);
 exit;
 
 download_file:
-header("Content-Description: File Transfer");
-header("Content-Type: application/octet-stream");
-header("Content-Disposition: attachment; filename=\"".basename($f)."\"");
-header("Expires: 0");
-header("Cache-Control: must-revalidate");
-header("Pragma: public");
-header("Content-Length: ".filesize($f));
-flush();
-readfile($f);
+header("Location: https://download.ammarfaizi.net/wisata_kaliurang/files/".basename($f));
