@@ -1,0 +1,31 @@
+html {
+	font-family: Arial;
+	background-color: #000;
+	color: #fff;
+}
+.cage {
+	display: inline-block;
+	width: 380px;
+	height: 300px;
+	border: 1px solid #fff;
+	margin: 10px;
+}
+.imgd {
+	margin: 5px 5px 0px 5px;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.pp {
+	font-size: 15px;
+}
+button {
+	cursor: pointer;
+}
+#load_more {
+	font-size: 30px;
+}
