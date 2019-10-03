@@ -38,9 +38,19 @@ if (isset($_GET["action"])) {
 						exit;
 					}
 
-					$res = resize_image($_GET["file"], 500, 400, false);
 					header("Content-Type: image/jpeg");
-					imagejpeg($res);
+
+					$cache_file = $_GET["file"]."._cache";
+					if (file_exists($cache_file)) {
+						readfile($cache_file);
+					} else {
+						ob_start();
+						$res = resize_image($_GET["file"], 500, 400, false);
+						imagejpeg($res);
+						$data = ob_get_clean();
+						file_put_contents($cache_file, $data);
+						echo $data;
+					}
 					exit;
 				}
 			}
