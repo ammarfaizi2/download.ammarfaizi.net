@@ -93,7 +93,8 @@ if (isset($_GET["action"])) {
 					unset($f[count($f) - 1]);
 					$f = __DIR__."/files/".implode(".", $f).".CR2";
 					if (file_exists($f)) {
-						goto download_file;
+						header("Location: https://download.ammarfaizi.net/wisata_kaliurang/files/{$f}");
+						exit;
 					}
 				} else if ($_GET["type"] === "jpg") {
 					$f = __DIR__."/files/".$_GET["file"];
