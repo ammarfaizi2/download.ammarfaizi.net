@@ -17,11 +17,11 @@ function apply_image(src, has_cr)
 		'<p class="pp"></p>'+
 		(
 			has_cr ?
-			'<a target="_blank" href="'+cr2+'">'+
+			'<a href="'+cr2+'">'+
 				'<button>Download CR2</button>'+
 			'</a>&nbsp;' : ''
 		) +
-		'<a target="_blank" href="'+jpg+'">'+
+		'<a href="'+jpg+'">'+
 			'<button>Download JPG</button>'+
 		'</a>'+
 	'</div>';
