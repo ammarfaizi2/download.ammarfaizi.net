@@ -6,10 +6,6 @@ define("INIT", true);
 
 require __DIR__."/helpers.php";
 
-$scan = scandir("./files");
-$showExt = ["jpg"];
-unset($scan[0], $scan[1]);
-
 ?><!DOCTYPE html>
 <html>
 <head>
